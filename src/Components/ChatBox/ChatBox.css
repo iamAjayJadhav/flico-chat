@@ -1,0 +1,15 @@
+.chatBox {
+  flex: 0.75;
+  background-color: white;
+}
+
+.chatBox__header {
+  flex: 1;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.chatBox__header > h3 {
+  display: flex;
+  font-size: 16px;
+}
