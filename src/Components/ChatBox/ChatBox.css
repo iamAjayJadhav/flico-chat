@@ -1,10 +1,10 @@
 .chatBox {
   flex: 0.75;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .chatBox__header {
-  flex: 1;
   align-items: center;
   border-bottom: 1px solid white;
 }
@@ -12,4 +12,9 @@
 .chatBox__header > h3 {
   display: flex;
   font-size: 16px;
+}
+
+.chatBox__body {
+  flex: 1;
+  background-image: url("https://i.imgur.com/pS0JaTE.png?1");
 }
