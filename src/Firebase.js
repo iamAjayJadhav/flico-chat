@@ -4,13 +4,13 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyARtRk-JTkIjInDjC5VVS3ZBb_5Gj633zg",
+  apiKey: process.env.REACT_APP_API_KEYS,
   authDomain: "flico-chat.firebaseapp.com",
   projectId: "flico-chat",
   storageBucket: "flico-chat.appspot.com",
-  messagingSenderId: "640635734396",
-  appId: "1:640635734396:web:5880aedd623db3b5c0bcf9",
-  measurementId: "G-TT9L6G7K7S",
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
