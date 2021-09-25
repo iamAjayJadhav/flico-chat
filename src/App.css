@@ -1,21 +1,7 @@
 .app {
   display: grid;
   place-items: center;
-  background-image: linear-gradient(
-    to right top,
-    #181c1f,
-    #1c1e22,
-    #202124,
-    #242326,
-    #282628,
-    #383536,
-    #484545,
-    #595555,
-    #7d7877,
-    #a39d9a,
-    #cac4bf,
-    #f2ede6
-  );
+  background-color: #f2ede6;
   height: 100vh;
 }
 
