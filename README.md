@@ -1,7 +1,7 @@
 # [flico-chat](https://flico-chat.web.app/)
 
 > ### About flico-chat
->
+
 > **flico-chat is an web app for messaging other people and also chat just like a community apps like discord where we have channels and rooms where people have conversations about different topics here also you can create your own room to talk and read what others want to say it will be a fun.**
 
 > **The Stack used to build this awesome chat app :-**
