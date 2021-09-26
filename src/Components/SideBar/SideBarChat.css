@@ -13,8 +13,18 @@
   color: #f2ede6;
 }
 
+a {
+  text-decoration: none !important;
+  color: #2c2a2b;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #f2ede6;
+}
+
 .sidebarChat__info > h2 {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 

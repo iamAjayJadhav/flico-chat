@@ -2,13 +2,21 @@ import { useState, useEffect } from "react";
 import "../ChatBox/ChatBox.css";
 import { useParams } from "react-router-dom";
 import db from "../../firebase";
+import firebase from "@firebase/app-compat";
+import { useStateValue } from "../../StateProvider/StateProvider";
 function ChatBox() {
   const { roomId } = useParams();
   const [input, setInput] = useState("");
   const [headerRoomName, setHeaderRoomName] = useState("");
-
+  const [messages, SetMessages] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
   const sendMessage = (e) => {
     e.preventDefault();
+    db.collection("rooms").doc(roomId).collection("messages").add({
+      name: user.displayName,
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
     setInput("");
   };
 
@@ -17,6 +25,14 @@ function ChatBox() {
       db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setHeaderRoomName(snapshot.data().roomName));
+
+      db.collection("rooms")
+        .doc(roomId)
+        .collection("messages")
+        .orderBy("timestamp", "asc")
+        .onSnapshot((snapshot) =>
+          SetMessages(snapshot.docs.map((doc) => doc.data()))
+        );
     }
   }, [roomId]);
 
@@ -24,14 +40,26 @@ function ChatBox() {
     <div className="chatBox">
       <div className="chatBox__header">
         <h3>{headerRoomName}</h3>
-        <p>Last seen at..</p>
+        <p>
+          {new Date(
+            messages[messages.length - 1]?.timestamp?.toDate()
+          ).toUTCString()}
+        </p>
       </div>
       <div className="chatBox__body">
-        <p className={`chatBox__incoming ${true && "chatBox__outgoing"}`}>
-          <span className="chatBox__name">Ajay</span>
-          Hey bois
-          <span className="chatBox__timestamp">11:11pm</span>
-        </p>
+        {messages.map((message) => (
+          <p
+            className={`chatBox__incoming ${
+              message.name === user.displayName && "chatBox__outgoing"
+            }`}
+          >
+            <span className="chatBox__name">{message.name}</span>
+            {message.message}
+            <span className="chatBox__timestamp">
+              {new Date(message.timestamp?.toDate()).toUTCString()}
+            </span>
+          </p>
+        ))}
       </div>
       <div className="chatBox__inputBox">
         <form>

@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import db from "../../firebase";
 import "./SideBar.css";
 import SideBarChat from "./SideBarChat";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import logo from "../../Images/flico-chat.svg";
+import { Avatar } from "@mui/material";
+import { useStateValue } from "../../StateProvider/StateProvider";
 function SideBar() {
   const [rooms, setRooms] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
       setRooms(
@@ -22,7 +25,8 @@ function SideBar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <AccountCircleIcon />
+        <Avatar className="sidebar__header__Avatar" src={user?.photoURL} />
+        <img src={logo} />
       </div>
       <div className="sidebar__chats">
         <SideBarChat addNewChat />

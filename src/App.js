@@ -4,12 +4,14 @@ import SideBar from "./Components/SideBar/SideBar";
 import ChatBox from "./Components/ChatBox/ChatBox";
 import { useState } from "react";
 import Login from "./Components/login/Login";
+import { useStateValue } from "./StateProvider/StateProvider";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="app">
-      {user ? (
+      {!user ? (
         <Login />
       ) : (
         <div className="app__body">
