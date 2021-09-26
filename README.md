@@ -1,30 +1,52 @@
-# Getting Started with Create React App
+# [flico-chat](https://flico-chat.web.app/)
+
+> ### About flico-chat
+>
+> **flico-chat is an web app for messaging other people and also chat just like a community apps like discord where we have channels and rooms where people have conversations about different topics here also you can create your own room to talk and read what others want to say it will be a fun.**
+
+> **The Stack used to build this awesome chat app :-**
+
+- HTML, CSS, Javascript
+- React.js
+- firebase
+- firebase authentication
+- material-ui
+- firebase hosting
+
+> ### How to run flico-chat in your system follow the below steps -
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
+
 You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
