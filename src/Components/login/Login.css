@@ -7,3 +7,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.loginBox__button > button {
+  font-size: 22px !important;
+  background-color: #fff !important;
+  border-radius: 50px !important;
+  padding: 30px;
+  color: black;
+  font-family: "Sniglet";
+}
+
+.loginBox__button > button:hover {
+  background-color: #ff6b6b !important;
+}
+.loginBox__logo > img {
+  object-fit: contain;
+  height: 50vh;
+}

@@ -23,6 +23,7 @@ function Login() {
       <div className="loginBox__logo">
         <img src={logo} alt="logo" />
       </div>
+
       <div className="loginBox__button">
         <Button onClick={signIn}>Sign in with Google</Button>
       </div>
