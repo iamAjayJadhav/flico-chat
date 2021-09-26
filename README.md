@@ -13,6 +13,7 @@
 - firebase authentication
 - material-ui
 - firebase hosting
+- for avatars we are using the [HTTP-API](https://avatars.dicebear.com/)
 
 > ### How to run flico-chat in your system follow the below steps -
 
